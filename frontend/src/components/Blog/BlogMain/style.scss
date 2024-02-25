@@ -1,0 +1,86 @@
+@import "../../../commons.scss";
+
+#blog-main {
+
+    height: calc(100svh - 11rem);
+    padding-bottom: 4rem;
+    overflow-y: scroll;
+
+    #blog-nav {
+        
+        display: flex;
+        justify-content: center;
+        font-size: 1.2rem;
+        width: fit-content;
+        height: 3rem;
+        margin: 0 auto;
+        padding: .5rem;
+        border-radius: 1.5rem;
+        
+        background-color: transparentize($color-main-2,.4);
+
+        &:hover {
+            background-color: transparentize($color-main-2,.2);
+        }
+
+        &:active {
+            background-color: $color-main-2;
+        }
+        
+        i {
+
+            $size: 2rem;
+            width: $size;
+            height: $size;
+            border-radius: calc($size / 2);
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: transparentize($color-main-2,.2);
+            }
+
+            &:active {
+                background-color: $color-main-2;
+            }
+
+        }
+
+        #before {
+            background-image: url("./icons/chevron_left_FILL0_wght400_GRAD0_opsz24.svg");
+        }
+
+        #after {
+            background-image: url("./icons/chevron_right_FILL0_wght400_GRAD0_opsz24.svg");
+        }
+
+        span {
+            margin: 0 1rem;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    #blog-main {
+
+        height: calc(100svh - 11.5rem);
+        padding-bottom: 1rem;
+
+        #blog-nav {
+            scale: .8;
+        }
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    #blog-main {
+
+        height: calc(100svh - 7.75rem);
+        padding-bottom: 1rem;
+    }
+
+}

@@ -1,0 +1,86 @@
+@import "../../../commons.scss";
+
+.org-content {
+
+    color: $color-main-2;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    margin: auto;
+    transition: background-color .3s ease;
+    background-color: transparentize($color: $color-main-3, $amount: .4);
+    
+    &:hover {
+        background-color: transparentize($color: $color-main-2, $amount: .4);
+        color: #000;
+
+        .date-box , .like-status {
+            i {
+                background-color: #000;
+            }
+        }
+    }
+
+    .date-box {
+
+        display: flex;
+        align-items: center;
+
+        i {
+
+            display: block;
+
+            $size: 2rem;
+            width: $size;
+            height: $size;
+
+            background-color: $color-main-2;
+
+            mask-image: url("../../Events/icons/calendar_clock_FILL0_wght400_GRAD0_opsz24.svg");
+            mask-size: contain;
+
+            margin-right: .5rem;
+        }
+    }
+
+    .like-status {
+
+        width: fit-content;
+        display: flex;
+        align-items: center;
+
+        @include textBorder();
+
+        i{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            margin-left: .5rem;
+            background-color: $color-main-2;
+            mask-image: url("./thumb_up_FILL0_wght400_GRAD0_opsz24.svg");
+            mask-size: contain;
+            mask-position: center;
+
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    .org-content {
+        .like-status, .date-box {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .org-content {
+        flex-direction: column;
+        .like-status, .date-box {
+            flex-direction: row;
+            margin-top: 1rem;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "../../../commons.scss";
+
+.event-info-card {
+
+    display: block;
+    width: 80%;
+    margin: 2rem auto;
+    background-color: transparentize($color-main-2,.4);
+    padding: 1rem;
+    border-radius: 1rem;
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: .4rem;
+    }
+
+    #date-box {
+
+        display: flex;
+        align-items: center ;
+
+        i {
+
+            display: block;
+
+            $size: 2rem;
+            width: $size;
+            height: $size;
+
+            background-image: url("../icons/calendar_clock_FILL0_wght400_GRAD0_opsz24.svg");
+            background-size: contain;
+
+            margin-right: .5rem;
+        }
+    }
+
+
+    .more-info {
+
+        display: flex;
+        align-items: center;
+        margin: .2rem 0;
+
+        img {
+
+            aspect-ratio: 1;
+            width: 2rem;
+        }
+
+        .org-name {
+            margin-left: .5rem;
+            font-weight: 500;
+        }
+
+        i {
+            aspect-ratio: 1;
+            width: 2rem;
+            background-color: #000;
+            mask-image: url("../icons/person_FILL0_wght400_GRAD0_opsz24.svg");
+            mask-size: cover;
+            mask-position: center;
+            margin-left: auto;
+        }
+
+        .join-amount {
+            margin: .2rem;
+        }
+        
+    }
+}

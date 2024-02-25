@@ -1,0 +1,25 @@
+@import '../../commons.scss';
+
+#home {
+
+    background-image: url('./OceanUnity\ Website\ Photo.PNG');
+    background-size: cover;
+    background-position: 0 0;
+    min-height: $main-page-height-l;
+    max-height: fit-content;
+    font-family: $font-main;
+    display: flex;
+
+}
+
+@media (max-width: 900px) {
+
+    #home {
+
+        & > :target(#menu-slider) {
+            background-color: aqua;
+        }
+
+    }
+
+}

@@ -1,0 +1,97 @@
+@import "../../../commons.scss";
+
+.comment {
+
+    display: block;
+    width: 90%;
+    margin: 2rem auto;
+    background-color: transparentize($color-main-2,.4);
+    padding: 1rem;
+    border-radius: 1rem;
+
+    .content {
+        margin-bottom: .4rem;
+    }
+
+    .more-info {
+
+        display: flex;
+        align-items: center;
+        margin: .2rem 0;
+
+        .poster {
+
+            display: flex;
+
+            img {
+
+                aspect-ratio: 1;
+                width: 1.6rem;
+                border-radius: 50%;
+                border: 1px solid #283659;
+                margin-right: 0.5rem;
+            }
+
+        }
+
+        .likes {
+
+            display: flex;
+            margin-left: auto;
+
+            i {
+                display: block;
+                aspect-ratio: 1;
+                width: 2rem;
+                background-image: url("../../Community/CommunityPostBox/icons/like.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: auto;
+            }
+    
+            span {
+                margin: .2rem;
+            }
+
+        }
+        
+    }
+}
+
+@media (max-width: 900px) {
+
+    .comment {
+        
+        font-size: .8rem;
+
+        .more-info {
+
+            .poster {
+
+                align-items: center;
+
+                img {
+
+                    width: 1.6rem;
+
+                }
+
+            }
+
+            .likes {
+
+                align-items: center;
+
+                i {
+
+                    width: 1.6rem;
+
+                }
+
+            }
+        }
+
+    }
+    
+}

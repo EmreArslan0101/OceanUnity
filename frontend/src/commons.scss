@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$color-main-1 : #283659;
+$color-main-2 : #fff;
+$color-main-3 : #23a1dc;
+$color-main-4 : #3baae1;
+$color-main-5 : #60bbe5;
+$font-main : 'Montserrat', sans-serif;
+
+$main-page-height-l: 100vh;
+$main-page-height-m: 120vh;
+
+%inputsCommon {
+    height: 1.5em;
+    font-size: 1.1em;
+    margin-top: .25em;
+    padding: 4px 12px;
+    border: none;
+    border-radius: calc(1em + 8px);
+}
+
+%anchorReset {
+
+    color : inherit;
+    
+    &, &:hover, &:target, &:active, &:visited {
+        text-decoration: none;
+    }
+
+}
+
+@mixin onHoverGetsBiggerEffect($scale) {
+
+    transition: .3s;
+
+    &:hover{
+        scale: $scale;
+    }
+
+}
+
+@mixin textBorder($text-shadow-size: .1px, $text-shadow-blur: .1px, $text-shadow-color: rgba(0, 0, 0, 0.308)) {
+    text-shadow: -$text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 $text-shadow-size $text-shadow-blur $text-shadow-color, $text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 -$text-shadow-size $text-shadow-blur $text-shadow-color;
+}

@@ -1,0 +1,132 @@
+@import "../../commons.scss";
+
+#blog {
+
+    height: calc(100svh);
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #blog-header {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 4rem;
+        color: $color-main-2;
+
+        // $text-shadow-size: .1px;
+        // $text-shadow-blur: .1px;
+        // $text-shadow-color: rgba(0, 0, 0, 0.308);
+
+        // text-shadow: -$text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 $text-shadow-size $text-shadow-blur $text-shadow-color, $text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 -$text-shadow-size $text-shadow-blur $text-shadow-color;
+
+        @include textBorder;
+    
+
+        h3{
+
+            width: fit-content;
+            $fs: 3rem;
+    
+            line-height: calc((3 * $fs) / 4);
+            font-size: $fs;
+            padding: calc($fs / 2) 0;
+            text-align: center;
+    
+        }
+
+        #blog-amount-chooser {
+
+            span {
+                margin-right: .2rem;
+            }
+
+            #blog-amount-input {
+                color: #000;
+                background-color: #fff;
+                border-radius: .3rem;
+                padding: .1rem;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width:900px) {
+
+    #blog {
+
+        #blog-header {
+
+            h3{
+    
+                $fs: 2rem;
+    
+                line-height: calc((3 * $fs) / 4);
+                font-size: $fs;
+                padding: calc($fs / 2) 0;
+                text-align: center;
+        
+            }
+    
+            #blog-amount-chooser {
+    
+                span {
+                    margin-right: .2rem;
+                }
+    
+                #blog-amount-input {
+                    color: #000;
+                    background-color: #fff;
+                    border-radius: .3rem;
+                    padding: .1rem;
+                }
+            }
+    
+        }
+
+    }
+    
+}
+
+@media (max-width:500px) {
+
+    #blog {
+
+        #blog-header {
+
+            margin: 0 1rem;
+
+            h3{
+    
+                $fs: 1.5rem;
+    
+                line-height: calc((3 * $fs) / 4);
+                font-size: $fs;
+                padding: calc($fs / 2) 0;
+                text-align: center;
+        
+            }
+    
+            #blog-amount-chooser {
+    
+                span {
+                    margin-right: .2rem;
+                }
+    
+                #blog-amount-input {
+                    color: #000;
+                    background-color: #fff;
+                    border-radius: .3rem;
+                    padding: .1rem;
+                    font-size: 1rem;
+                }
+            }
+    
+        }
+
+    }
+    
+}

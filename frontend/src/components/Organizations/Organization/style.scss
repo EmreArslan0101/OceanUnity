@@ -1,0 +1,59 @@
+@import "../../../commons.scss";
+
+.organization-card {
+
+    width: 200px;
+    height: 250px;
+
+    background-color: transparentize($color: $color-main-2, $amount: .4);
+
+    border-radius: 1rem;
+    margin: auto;
+
+    transition: .3s ease;
+
+    &:hover {
+        background-color: transparentize($color: $color-main-4, $amount: .4);
+        color: $color-main-2;
+    }
+
+    &:active {
+        background-color: transparentize($color: $color-main-4, $amount: .1);
+    }
+
+
+    img {
+
+        aspect-ratio: 1;
+        width: 80%;
+        margin: 1rem auto;
+
+    }
+
+    h4 {
+        text-align: center;
+        margin: 1rem;
+        font-weight: bold;
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    .organization-card {
+
+        width: 30svw;
+        height: 38svw;
+
+    }
+}
+
+@media (max-width: 900px) {
+    
+    .organization-card {
+
+        width: 45svw;
+        height: 60svw;
+
+    }
+}

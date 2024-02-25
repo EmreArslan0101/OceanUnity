@@ -1,0 +1,46 @@
+@import "../../commons.scss";
+
+#comments-box {
+
+    #comments-header {
+
+        width: fit-content;
+        margin: 1rem;
+        margin-top: 2rem;
+        display: flex;
+
+        h4 {
+            font-size: 2rem;
+        }
+        
+        i {
+            display: block;
+            aspect-ratio: 1;
+            width: 3rem;
+            background-image: url("./comment.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: .5rem;
+        }
+
+    }
+}
+
+@media (max-width: 900px) {
+
+    #comments-box {
+
+        #comments-header {
+    
+            h4 {
+                font-size: 1.5rem;
+            }
+            
+            i {
+                width: 2rem;
+            }
+    
+        }
+    }
+    
+}

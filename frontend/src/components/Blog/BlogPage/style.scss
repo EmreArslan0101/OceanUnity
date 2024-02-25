@@ -1,0 +1,160 @@
+@import "../../../commons.scss";
+
+#blog-page {
+
+    height: calc(100svh - 5.75rem);
+    background-image: url("../../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    overflow-y: scroll;
+
+    #blog-content {
+
+        width: 80%;
+        height: fit-content;
+        margin: 4rem auto;
+        padding: 1rem;
+        padding-bottom: 2rem;
+        background-color: transparentize($color: $color-main-2, $amount: .2);
+        border-radius: 1rem;
+
+        h2 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+            margin: 1rem;
+            text-align: left;
+        }
+
+        img:not(.poster img) {
+
+            $size: 40svh;
+            height: $size;
+
+            aspect-ratio: 1/1;
+
+            margin: 1rem auto;
+
+        }
+
+        p:not(.content) {
+            margin: 0 1rem;
+        }
+
+        #post-info {
+
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+
+            #poster {
+
+                display: flex;
+                align-items: center;
+
+                img {
+                    height: auto;
+                    margin: 0;
+                    margin-right: .5rem;
+                    aspect-ratio: 1/1;
+                    width: 2.5rem;
+                    border-radius: 50%;
+                    border: 1px solid $color-main-1;
+                }
+
+                span {
+                    font-weight: bolder;
+                }
+
+            }
+
+            #date-box {
+
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                font-weight: bold;
+
+                i {
+                    display: block;
+                    aspect-ratio: 1/1;
+                    width: 2rem;
+                    background-color: #000;
+                    mask-image: url("../../AddPost/edit_calendar_FILL0_wght400_GRAD0_opsz24.svg");
+                    mask-size: contain;
+                    margin-right: .5rem;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #blog-page {
+
+        height: calc(100svh - 8rem);
+    
+        #blog-content {
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+        }
+    
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+    #blog-page {
+
+        height: calc(100svh - 5rem);
+    
+        #blog-content {
+
+            margin: 2rem auto;
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            img:not(.poster img) {
+
+                $size: 60svw;
+                height: $size;
+    
+    
+            }
+
+            p {
+                font-size: .8rem;
+            }
+
+            #post-info {
+
+                flex-direction: column;
+
+                #date-box {
+                    margin-left: 0;
+                }
+
+                #poster, #date-box {
+                    margin: .4rem 0;
+                    margin-right: auto;
+                }
+            }
+    
+
+        }
+    
+    }
+
+}
+

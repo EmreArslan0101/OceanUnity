@@ -1,0 +1,76 @@
+@import "../../commons.scss";
+
+#organizations {
+
+    height: calc(100svh - 5.75rem);
+    overflow-y: hidden;
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    h3 {
+        margin: 1rem;
+        color: $color-main-2;
+        font-size: 2rem;
+        @include textBorder();
+    }
+
+    #organizations-grid {
+
+        display: grid;
+        overflow-y: scroll;
+        height: inherit;
+        padding: auto;
+        $col-width: auto;
+        grid-template-columns: $col-width $col-width $col-width $col-width;
+        gap: 1rem;
+        padding-bottom: 4rem;
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #organizations {
+
+        height: calc(100svh - 8rem);
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        #organizations-grid {
+
+            $col-width: auto;
+            grid-template-columns: $col-width $col-width $col-width;
+            padding-bottom: 6rem;
+
+        }
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+    #organizations {
+
+        height: calc(100svh - 5rem);
+
+        h3 {
+            font-size: 1.2rem;
+            margin: .5rem 1rem;
+        }
+
+        #organizations-grid {
+
+            $col-width: auto;
+            grid-template-columns: $col-width $col-width;
+            padding-bottom: 4rem;
+
+        }
+
+    }
+
+}

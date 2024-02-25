@@ -1,0 +1,152 @@
+@import "../../commons.scss";
+
+#community {
+
+    height: calc(100svh - 5.75rem);
+    overflow-y: scroll;
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #community-header {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 4rem;
+        color: $color-main-2;
+
+        // $text-shadow-size: .1px;
+        // $text-shadow-blur: .1px;
+        // $text-shadow-color: rgba(0, 0, 0, 0.308);
+
+        // text-shadow: -$text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 $text-shadow-size $text-shadow-blur $text-shadow-color, $text-shadow-size 0 $text-shadow-blur $text-shadow-color, 0 -$text-shadow-size $text-shadow-blur $text-shadow-color;
+
+        @include textBorder;
+    
+
+        h3{
+
+            width: fit-content;
+            $fs: 2.5rem;
+    
+            line-height: calc((3 * $fs) / 4);
+            font-size: $fs;
+            padding: calc($fs / 2) 0;
+            text-align: center;
+    
+        }
+
+        #community-post-amount-chooser {
+
+            span {
+                margin-right: .2rem;
+            }
+
+            #community-post-amount-input {
+                color: #000;
+                background-color: #fff;
+                border-radius: .3rem;
+                padding: .1rem;
+            }
+        }
+    }
+    
+    #community-nav {
+
+        display: flex;
+        justify-content: center;
+        font-size: 1.2rem;
+        width: fit-content;
+        height: 3rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        padding: .5rem;
+        border-radius: 1.5rem;
+        
+        background-color: transparentize($color-main-2,.4);
+
+        &:hover {
+            background-color: transparentize($color-main-2,.2);
+        }
+
+        &:active {
+            background-color: $color-main-2;
+        }
+        
+        i {
+
+            $size: 2rem;
+            width: $size;
+            height: $size;
+            border-radius: calc($size / 2);
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: transparentize($color-main-2,.2);
+            }
+
+            &:active {
+                background-color: $color-main-2;
+            }
+
+        }
+
+        #before {
+            background-image: url("../Blog/BlogMain/icons/chevron_left_FILL0_wght400_GRAD0_opsz24.svg");
+        }
+
+        #after {
+            background-image: url("../Blog/BlogMain/icons/chevron_right_FILL0_wght400_GRAD0_opsz24.svg");
+        }
+
+        span {
+            margin: 0 1rem;
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #community {
+
+        height: calc(100svh - 8rem);
+
+        #community-header {
+
+            width: 90%;
+            margin: 0 auto;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+    #community {
+
+        height: calc(100svh - 5rem);
+
+        #community-header {
+
+            width: 95%;
+            margin: 0 auto;
+
+            h3 {
+                width: fit-content;
+                font-size: 1.3rem;
+                padding-bottom: .2rem;
+            }
+        }
+
+    }
+
+}

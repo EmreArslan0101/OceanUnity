@@ -1,0 +1,85 @@
+@import "../../../commons.scss";
+
+#add-comment-box {
+
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: transparentize($color: $color-main-2, $amount: .4);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-weight: bold;
+    }
+
+    form{
+
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: transparentize($color: $color-main-2, $amount: .6);
+            border-radius: 1rem;
+            border: 1px solid $color-main-1;
+            margin: 1rem auto;
+            font-weight: lighter;
+        }
+
+        button {
+
+            box-sizing: border-box;
+            background-color: $color-main-1;
+            color: $color-main-2;
+            font-size: 1rem;
+            display: block;
+            margin-left: auto;
+            padding: .5rem 2rem;
+            border: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: background-color ease 0.3s;
+
+            &:hover {
+                background-color: lighten($color-main-1, 5);
+            }
+
+            &:active {
+                background-color: lighten($color-main-1, 10);
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 500px) {
+    #add-comment-box {
+    
+        width: 95%;
+
+        span {
+            font-size: .8rem;
+        }
+
+        form {
+
+            textarea {
+
+                margin: .5rem auto;
+                padding: .5rem;
+                font-size: .8rem;
+
+            }
+
+            button {
+                font-size: .8rem;
+                padding: .4rem .8rem;
+            }
+        }
+    }
+}

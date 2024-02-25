@@ -1,0 +1,190 @@
+@use "sass:list";
+@import "../../../commons.scss";
+
+#post {
+
+    height: calc(100svh - 5.75rem);
+    overflow: scroll;
+    background-image: url("../../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #post-box {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        width: 60%;
+        margin: 1rem auto;
+        padding: 2rem 1rem 1rem 1rem;
+        overflow-y: scroll;
+        border-radius: 1rem;
+        background-color: transparentize($color-main-2,.4);
+    
+        .post-details, .more-infos {
+            display: flex;
+        }
+    
+        #post-img {
+
+            $size: 80%;
+            width: $size;
+            height: $size;
+    
+            object-fit: cover;
+            aspect-ratio: 1/1;
+    
+            margin: 1rem;
+            margin-top: 0;
+    
+        }
+
+        #others {
+
+            width: 100%;
+            margin-top: 1rem;
+            justify-content: space-between;
+    
+            display: flex;
+    
+            * {
+                width: fit-content;
+            }
+    
+            div {           
+                display: flex;
+                align-items: center;
+            }
+    
+            .poster {
+    
+                img {
+    
+                    $size: 1.6rem;
+                    width: $size;
+                    height: $size;
+    
+                    border-radius: 50%;
+                    border: 1px solid $color-main-1;
+                    margin-right: .5rem;
+    
+    
+                }
+    
+                span {
+                    font-size: .8rem;
+                }
+    
+            }
+    
+            .likes {
+    
+                margin-right: .5rem;
+                margin-left: auto;
+                z-index: 2;
+    
+                i {
+    
+                    $size: 1.6rem;
+                    width: $size;
+                    height: $size;
+    
+                    background-color: #000;
+                    mask-image: url("../CommunityPostBox/icons/like.svg");
+                    mask-position: center;
+                    mask-size: cover;
+    
+                }
+    
+                span {
+                    margin-left: .5rem;
+                }
+    
+            }
+    
+            i {
+    
+                display: block;
+                $size: 2rem;
+                width: $size;
+                height: $size;
+    
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+    
+        }
+    
+        #post-header {
+
+            width: 100%;
+            font-weight: bold;
+            margin: .5rem 0;
+
+        }
+
+        #post-content {
+            font-size: 1rem;
+        }
+    
+        p {
+            font-weight: lighter;
+            margin-right: 1rem;
+            
+        }
+    
+    }
+
+}
+
+
+@media (max-width: 900px) {
+    
+    #post {
+
+        height: calc(100svh - 8rem);
+        
+    }
+}
+
+@media (max-width: 500px) {
+
+    #post {
+
+        height: calc(100svh - 5rem);
+
+        #post-box {
+
+            width: 90%;
+
+            #post-content {
+                font-size: .9rem;
+            }
+    
+            #others {
+    
+                padding: 0;
+    
+                .likes {
+    
+                    i {
+                        $size: 1.5rem;
+                        width: $size;
+                        height: $size;
+                    }
+    
+                    span {
+                        font-size: 1rem;
+                    }
+    
+                }
+    
+            }
+    
+        }
+
+    }
+
+
+}

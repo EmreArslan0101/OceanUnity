@@ -1,0 +1,371 @@
+@use "sass:list";
+@import "../../../commons.scss";
+
+.community-post-box {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 55%;
+    margin: 1rem auto;
+    padding: 2rem 1rem 1rem 1rem;
+    overflow-y: hidden;
+    border-radius: 1rem;
+    background-color: transparentize($color-main-2,.4);
+
+    &:hover {
+        background-color: transparentize($color-main-2,.2);
+    }
+
+    &:active {
+        background-color: $color-main-2;
+    }
+
+    .post-details, .more-infos {
+        display: flex;
+    }
+
+    .upper {
+
+        display: flex;
+        align-items: center;
+
+        img {
+
+            $size: 20svw;
+            width: $size;
+            height: $size;
+    
+            object-fit: cover;
+            aspect-ratio: 1/1;
+    
+            margin: 1rem;
+            margin-top: 0;
+    
+        }
+    
+        .text-info {
+
+            width: 100%;
+
+            h4 {
+
+                font-weight: bold;
+                margin-bottom: .5rem;
+
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .date-box {
+
+                display: flex;
+                align-items: center ;
+        
+                i {
+        
+                    display: block;
+        
+                    $size: 2rem;
+                    width: $size;
+                    height: $size;
+        
+                    background-image: url("./icons/calendar_clock_FILL0_wght400_GRAD0_opsz24.svg");
+                    background-size: contain;
+        
+                    margin-right: .5rem;
+                }
+            }
+
+            .comment-box, .date-box {
+
+                display: flex;
+                align-items: center;
+                margin-top: 1rem;
+        
+                i {
+        
+                    display: block;
+        
+                    $size: 2rem;
+                    aspect-ratio: 1/1;
+                    width: $size;
+        
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+        
+                    margin-right: .5rem;
+                }
+
+            }
+
+            .date-box {
+                
+                i {
+                    background-image: url("./icons/calendar_clock_FILL0_wght400_GRAD0_opsz24.svg");
+                }
+
+            }
+
+            .comment-box {
+                i {
+                    background-image: url("../../Comments/comment.svg");
+                }
+            }
+    
+        }
+
+    }
+
+    .lower {
+
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: space-between;
+
+        display: flex;
+
+        * {
+            width: fit-content;
+        }
+
+        div {           
+            display: flex;
+            align-items: center;
+        }
+
+        .poster {
+
+            img {
+
+                $size: 1.6rem;
+                width: $size;
+                height: $size;
+
+                border-radius: 50%;
+                border: 1px solid $color-main-1;
+                margin-right: .5rem;
+
+
+            }
+
+            span {
+                font-size: .8rem;
+            }
+
+        }
+
+        .likes {
+
+            margin-right: .5rem;
+            margin-left: auto;
+            z-index: 2;
+
+            i {
+
+                $size: 1.6rem;
+                width: $size;
+                height: $size;
+
+                background-color: #000;
+                mask-image: url("./icons/like.svg");
+                mask-position: center;
+                mask-size: cover;
+
+            }
+
+            span {
+                margin-left: .5rem;
+            }
+
+        }
+
+        i {
+
+            display: block;
+            $size: 2rem;
+            width: $size;
+            height: $size;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .community-post {
+            background-image: url("./icons/community.svg");
+        }
+
+        .blog-post {
+            background-image: url("./icons/blog.svg");
+        }
+
+        .event-post {
+            background-image: url("./icons/event.svg");
+        }
+    }
+
+    p {
+        font-weight: lighter;
+        margin-right: 1rem;
+        
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    .community-post-box {
+
+        width: 90%;
+
+        .upper {
+
+            img {
+
+                $size: 80%;
+                width: $size;
+                height: $size;
+            }
+
+            .text-info {
+
+                h4 {
+                    font-size: .9rem;
+                    margin-right: .4rem;
+                }
+                
+                p{
+                    font-size: .9rem;
+                }
+
+            }
+
+        }
+
+        .lower {
+
+            .likes {
+
+                i {
+                    $size: 1.2rem;
+                    width: $size;
+                    height: $size;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+
+            }
+
+            .post-type {
+
+                $size: 1.2rem;
+                width: $size;
+                height: $size;
+                align-self: center;
+
+            }
+        }
+
+    }
+}
+
+@media (max-width: 560px) {
+    
+    .community-post-box {
+
+        width: 90%;
+
+        .upper {
+            
+            flex-direction: column;
+            
+            img {
+
+                $size: 80svw;
+                width: $size;
+                height: $size;
+
+                margin-bottom: 1rem;
+            }
+
+            .text-info {
+
+                h4 {
+                    font-size: .8rem;
+                    margin-right: 0;
+                }
+                
+                p{
+                    font-size: .8rem;
+                }
+
+                .comment-box, .date-box {
+
+                    i {
+                        width: 1.5rem
+                    }
+                    
+                    span {
+                        font-size: .9rem;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .lower {
+
+            padding: 0;
+
+            .likes {
+
+                i {
+                    $size: 1.2rem;
+                    width: $size;
+                    height: $size;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+
+            }
+
+            .post-type {
+
+                $size: 1.2rem;
+                width: $size;
+                height: $size;
+                align-self: center;
+
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 400px) {
+    
+    .blog-card {
+
+        width: 90%;
+
+        h3{
+            font-size: .6rem;
+        }
+
+        p {
+            font-size: .6rem;
+        }
+    }
+}
+

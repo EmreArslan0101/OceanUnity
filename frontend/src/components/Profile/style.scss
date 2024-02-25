@@ -1,0 +1,223 @@
+@import "../../commons.scss";
+
+#profile-main-page {
+
+    height: calc(100svh - 5.75rem);
+    overflow-y: scroll;
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #info-box {
+
+        height: 20rem;
+        background-color: transparentize($color: $color-main-2, $amount: .2);
+        display: flex;
+        align-items: center;
+
+        img {
+
+            height: 80%;
+            aspect-ratio: 1;
+
+            margin: 1rem;
+
+        }
+
+        #real-info {
+
+            h3 {
+                font-size: 3rem;
+                font-weight: bold;
+                margin: .5rem auto 1rem auto;
+            }
+
+            #stats {
+
+                font-size: 1.5rem;
+                
+                .org-stat {
+
+                    .stat-for {
+
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        button {
+
+            padding: 1rem 2rem;
+            margin: 0 5svw 0 auto;
+            border-radius: 1rem;
+
+        }
+
+        #flw-btn {
+            background-color: $color-main-1;
+            color: $color-main-2;
+        }
+
+        #unf-btn {
+            background-color: $color-main-2;
+            color: $color-main-1;
+        }
+
+    }
+
+    #posts {
+
+        #content-mode {
+
+            display: flex;
+            justify-content: center;
+            margin: 1rem auto;
+            font-size: 1.5rem;
+            
+            div {
+                width: fit-content;
+                margin: 0 1rem;
+                color: $color-main-2;
+            }
+
+            #active-content {
+                text-decoration-line: underline;
+            }
+        }
+
+        #content-nav {
+
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            width: fit-content;
+            height: 3rem;
+            margin: 1rem auto;
+            padding: .5rem;
+            border-radius: 1.5rem;
+            
+            background-color: transparentize($color-main-2,.4);
+
+            &:hover {
+                background-color: transparentize($color-main-2,.2);
+            }
+
+            &:active {
+                background-color: $color-main-2;
+            }
+            
+            i {
+
+                $size: 2rem;
+                width: $size;
+                height: $size;
+                border-radius: calc($size / 2);
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &:hover {
+                    background-color: transparentize($color-main-2,.2);
+                }
+
+                &:active {
+                    background-color: $color-main-2;
+                }
+
+            }
+
+            #before {
+                background-image: url("../Blog/BlogMain/icons/chevron_left_FILL0_wght400_GRAD0_opsz24.svg");
+            }
+
+            #after {
+                background-image: url("../Blog/BlogMain/icons/chevron_right_FILL0_wght400_GRAD0_opsz24.svg");
+            }
+
+            span {
+                margin: 0 1rem;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #profile-main-page {
+
+        height: calc(100svh - 8rem);
+
+        #info-box {
+
+            flex-wrap: wrap;
+
+            img {
+                $size: 12rem;
+                width: $size;
+                height: $size;
+            }
+
+            #real-info {
+
+                h3 {
+                    font-size: 2rem;
+                    margin: .5rem auto;
+                }
+
+                #stats {
+                    font-size: 1.4rem;
+                }
+            }
+
+            button {
+
+                margin-left: auto;
+                margin-right: 2rem;
+
+                @media (max-width: 600px) {
+                    margin: 1rem auto;
+                }
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    
+    #profile-main-page {
+
+        height: calc(100svh - 5rem);
+
+        #info-box {
+
+            height: fit-content;
+            flex-direction: column;
+
+
+
+            #real-info {
+
+                h3 {
+                    font-size: 1.2rem;
+                    margin: .5rem auto;
+                }
+            }
+
+            button {
+                margin: 1rem auto;
+            }
+
+        }
+
+        #posts {
+            #content-mode {
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+
+    }
+}

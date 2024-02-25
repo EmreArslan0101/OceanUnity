@@ -1,0 +1,162 @@
+@import "../../../commons.scss";
+
+#event-info {
+
+    height: calc(100svh - 5.75rem);
+    overflow-y: scroll;
+    background-image: url("../../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #info-box {
+
+        width: 80%;
+        margin: 2rem auto;
+        padding: 2rem;
+
+        background-color: transparentize($color: $color-main-2, $amount: .4);
+        border-radius: 1rem;
+
+        img {
+            
+            $size: 40svw;
+
+            width: $size;
+
+            aspect-ratio: 16/9;
+            object-fit: cover;
+
+            margin: 1rem auto;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        #date-box {
+
+            display: flex;
+            align-items: center ;
+    
+            i {
+    
+                display: block;
+    
+                $size: 2rem;
+                width: $size;
+                height: $size;
+    
+                background-image: url("../icons/calendar_clock_FILL0_wght400_GRAD0_opsz24.svg");
+                background-size: contain;
+    
+                margin-right: .5rem;
+            }
+        }
+
+        #bottom {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+
+            #already-joined {
+
+                display: flex;
+                align-items: center;
+
+                i{
+                    display: block;
+                    aspect-ratio: 1;
+                    width: 2rem;
+                    background-color: #000;
+                    mask-image: url("../icons/person_FILL0_wght400_GRAD0_opsz24.svg");
+                    mask-size: cover;
+                    mask-position: center;
+                    margin-left: auto;
+                }
+    
+                span {
+                    display: block;
+                }
+
+            }
+
+            button {
+
+                padding: .5rem 1rem;
+                margin-right: 1rem;
+                border-radius: .5rem;
+                
+            }
+
+            #join-btn {
+                background-color: $color-main-1;
+                color: $color-main-2;
+            }
+    
+            #unjoin-btn {
+                background-color: $color-main-2;
+                color: $color-main-1;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #event-info{
+
+        height: calc(100svh - 8rem);
+
+        #info-box {
+
+            img {
+                width: 60svw;
+            }
+        }
+
+    }
+    
+}
+
+@media (max-width: 500px) {
+    
+    #event-info{
+
+        height: calc(100svh - 5rem);
+
+        #info-box {
+
+            img {
+                aspect-ratio: 4/3;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+    
+            p{
+                font-size: .8rem;
+            }
+
+            #bottom {
+            
+                button {
+                    margin-right: 0;
+                }
+            }
+
+        }
+
+    }
+    
+}

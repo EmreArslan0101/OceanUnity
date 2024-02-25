@@ -1,0 +1,267 @@
+@import "../../commons.scss";
+
+#add-blog {
+
+    height: calc(100svh - 5.75rem);
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    overflow-y: scroll;
+
+    #blog-content {
+
+        width: 80%;
+        height: fit-content;
+        margin: 4rem auto;
+        padding: 1rem;
+        padding-bottom: 2rem;
+        background-color: transparentize($color: $color-main-2, $amount: .2);
+        border-radius: 1rem;
+
+        form {
+
+            display: flex;
+            flex-direction: column;
+
+            #header {
+
+                text-align: center;
+                font-weight: 500;
+                font-size: 2rem;
+                margin: 1rem;
+                text-align: left;
+                background-color: transparent;
+    
+                &:focus {
+                    outline: none;
+                }
+            }
+    
+            #img {
+    
+                text-indent: -999em;
+    
+                display: block;
+    
+                $size: 40svh;
+                height: $size;
+                width: $size;
+    
+                margin: 1rem auto;
+    
+                outline: 2px solid $color-main-4;
+    
+                mask-image: url("./add_a_photo_FILL0_wght400_GRAD0_opsz24.svg");
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: 50%;
+                background-color: transparentize($color-main-4,.2);
+    
+                &:hover {
+                    cursor: cell;
+                }
+                
+    
+            }
+    
+            #content {
+    
+                display: block;
+                width: calc(100% - 2rem);
+                margin: 0 1rem;
+                border-radius: 0;
+                background-color: transparent;
+                box-shadow: 0 0 0px 1px $color-main-5;
+                transition: .3s ease;
+    
+                &:focus-within {
+                    outline: none;
+                    box-shadow: 0 0 0px 4px $color-main-5;
+                }
+    
+            }
+    
+            #post-type {
+    
+                @extend %inputsCommon;
+    
+                height: 3rem;
+                margin: 1rem;
+                font-size: 1.2rem;
+                border-radius: .5rem;
+                background-color: $color-main-2;
+                width: 40svw;
+    
+            }
+
+            #event-date {
+
+                label {
+
+                    width: 80%;
+                    margin: 1rem;
+
+                    span {
+
+                        font-size: 1.5rem;
+
+                    }
+
+                    input {
+
+                        @extend %inputsCommon;
+
+                        height: 3rem;
+                        margin: 1rem;
+                        font-size: 1.2rem;
+                        border-radius: .5rem;
+                        background-color: $color-main-2;
+
+                    }
+
+                }
+
+            }
+    
+            #submit-button {
+    
+                box-sizing: border-box;
+                background-color: $color-main-1;
+                color: $color-main-2;
+                font-size: 1rem;
+                display: block;
+                margin: 2rem auto 0 auto;
+                padding: 1rem 4rem;
+                border: none;
+                border-radius: 8px;
+                text-transform: uppercase;
+                transition: background-color ease 0.3s;
+    
+                &:hover {
+                    background-color: lighten($color-main-1, 5);
+                }
+    
+                &:active {
+                    background-color: lighten($color-main-1, 10);
+                }
+    
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    #add-blog {
+
+        height: calc(100svh - 8rem);
+    
+        #blog-content {
+
+            form {
+
+                #header {
+                    font-size: 1.5rem;
+                    width: calc(100% - 2rem);
+                }
+
+                #event-date {
+
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+
+                        margin: .5rem 1rem;
+    
+                        span {
+                            font-size: 1.2rem;
+                        }
+
+                        input {
+                            margin: .5rem;
+                            width: 75%;
+                            max-width: fit-content;
+                        }
+            
+                    }
+
+                }
+
+            }
+
+        }
+    
+    }
+
+}
+
+@media (max-width: 500px) {
+    
+    #add-blog {
+
+        height: calc(100svh - 5rem);
+    
+        #blog-content {
+
+            margin: 2rem auto;
+
+            form {
+
+                #header {
+                    font-size: 1.2rem;
+                }
+    
+                #img {
+    
+                    $size: 20svh;
+                    height: $size;
+                    width: $size;
+        
+        
+                }
+    
+                #content {
+                    font-size: .8rem;
+                }
+    
+                #post-type {
+                    font-size: 1rem;
+                    width: 85%;
+                }
+
+                #event-date {
+
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+
+                        margin: .5rem 1rem;
+    
+                        span {
+                            font-size: 1rem;
+                        }
+
+                        input {
+                            margin: 0;
+                            font-size: .8rem;
+                            width: 100%;
+                        }
+            
+                    }
+
+                }
+
+            }
+
+        }
+    
+    }
+
+}
+

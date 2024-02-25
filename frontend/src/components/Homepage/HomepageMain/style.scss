@@ -1,0 +1,761 @@
+@use 'sass:list';
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import '../../../commons.scss';
+
+%button {
+  box-sizing: border-box;
+  background-color: $color-main-1;
+  color: $color-main-2;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: background-color ease 0.3s;
+
+  &:hover {
+    background-color: lighten($color-main-1, 5);
+  }
+
+  &:active {
+    background-color: lighten($color-main-1, 10);
+  }
+}
+
+%card {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 14svw;
+  height: fit-content;
+  background-color: transparentize($color: $color-main-2, $amount: 0.35);
+  margin: 0 5px;
+  border-radius: 32px;
+  padding: 2vh 2vw;
+}
+
+#homepage-main {
+  width: 100vw;
+  height: calc($main-page-height-l - 5.75rem);
+  position: absolute;
+  top: 5.75rem;
+  overflow: hidden scroll;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 500;
+    font-size: 7rem;
+    text-wrap: balance;
+    text-align: center;
+    min-width: 80vw;
+    height: 8vw;
+    margin: 0.4em auto;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    padding: 0 9em;
+    line-height: 1.5em;
+  }
+
+  #about-us-button-box {
+
+    width: 100%;
+    height: fit-content;
+    padding: 2em 0;
+
+    a {
+      @extend %anchorReset;
+      @extend %button;
+      width: fit-content;
+      padding: 1rem 4rem;
+    }
+  }
+
+  #info-cards-box {
+    display: flex;
+    width: 80vw;
+    margin: 1rem auto;
+    justify-content: space-around;
+
+    .info-card {
+      @extend %card;
+
+      i {
+        scale: 2.5;
+        width: fit-content;
+        margin: 28px 0;
+        margin-left: 20px;
+      }
+
+      .number {
+        $fs: 5rem;
+
+        color: $color-main-1;
+        font-family: 'Teko', sans-serif;
+        font-size: $fs;
+        font-weight: 500;
+        height: $fs;
+        width: fit-content;
+        vertical-align: top;
+      }
+
+      .text {
+        font-weight: 600;
+        font-size: 1.25rem;
+        width: 14ch;
+        margin-top: 0.5em;
+      }
+
+      .see-details-button {
+        @extend %button, %anchorReset;
+        text-transform: capitalize;
+        padding: 0.8em 2.5em;
+        margin-left: 0;
+        margin-top: 1em;
+      }
+
+      #icon1::after {
+        content: url('./icons/beach.svg');
+        position: relative;
+        left: -4px;
+      }
+
+      #icon2::after {
+        content: url('./icons/cycle.svg');
+      }
+
+      #icon3::after {
+        content: url('./icons/members.svg');
+      }
+    }
+
+    #fast-signup-card {
+      @extend %card;
+
+      width: fit-content;
+      justify-content: center;
+
+      $left-move: 0.25rem;
+
+      h3 {
+        padding-left: $left-move;
+        padding-bottom: 1rem;
+      }
+
+      form {
+        $l-width: 100%;
+
+        select,
+        input {
+          font-style: italic;
+          font-size: 1rem;
+          background-color: #fff;
+          border: none;
+          margin: $left-move;
+          padding: 0.5rem;
+          border-radius: 8px;
+          width: calc($l-width - 0.5rem);
+          height: 3em;
+        }
+
+        label {
+          width: $l-width;
+
+          display: block;
+
+          select {
+            color: #888;
+          }
+
+          span {
+            padding-left: 2px;
+          }
+
+          #bd-info-box {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+
+            input {
+              width: calc(($l-width - 1.5rem) / 3);
+              &::placeholder {
+                text-align: center;
+              }
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type='number'] {
+          -moz-appearance: textfield;
+        }
+
+        input[type='submit'] {
+          @extend %button;
+          width: calc(100% - 0.5rem);
+          text-transform: capitalize;
+          font-style: normal;
+          padding: 0.8em 0;
+        }
+      }
+    }
+
+    .info-card,
+    #fast-signup-card {
+      min-height: 85%;
+      height: 100%;
+      margin: 0 2vmax;
+    }
+  }
+
+  #about-us {
+    $about-us-box-curve: 48px;
+
+    background-color: $color-main-2;
+    max-width: 100vw;
+    min-width: 90vw;
+    width: min-content;
+    margin: 3rem auto;
+    margin-bottom: 0;
+    color: #000;
+    border-radius: $about-us-box-curve;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    * {
+      margin: 16px auto;
+    }
+
+    h2,
+    h3 {
+      $fs: 100px;
+      color: $color-main-1;
+      width: fit-content;
+      height: $fs;
+      font-size: $fs;
+    }
+
+    h3 {
+      $fs: 40px;
+      font-size: $fs;
+      height: $fs;
+    }
+
+    p {
+      color: #000;
+    }
+
+    #logo-pic {
+      $pic-size: 150px;
+
+      display: block;
+      width: $pic-size;
+      height: $pic-size;
+      margin: 80px auto;
+    }
+
+    #contributed-sdgs-box {
+      #sdg-card-box {
+        $sdgs: '04', '13', '14', '15', '17';
+        $sdg-colors: #c7212f,#407f46,#1f97d4,#59ba47,#14496b;
+
+        display: flex;
+        margin: 16px auto;
+        justify-content: space-around;
+        width: fit-content;
+
+        a {
+          @extend %anchorReset;
+          $box-size: 10svw;
+
+          display: block;
+          color: #0000;
+          width: $box-size;
+          height: $box-size;
+
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              background-image: url('./icons/sdg_cards/E_WEB_' + list.nth(
+                  $sdgs,
+                  $i
+                ) + '.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              margin: 1svw;
+              transition: .3s ease;
+            }
+
+            &:nth-child(#{$i}):hover {
+              background-image: url('./icons/sdg_cards/E_WEB_INVERTED_' + list.nth(
+                  $sdgs,
+                  $i
+                ) + '.png');
+
+              border: 1px solid list.nth($sdg-colors,$i);
+            }
+
+          }
+        }
+      }
+    }
+
+    #contributed-others-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+
+      a {
+        @extend %anchorReset;
+
+        color: #0000;
+        font-size: 1px;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 32px;
+      }
+
+      #sdg-logo {
+        background-image: url('./icons/E_SDG_logo_without_UN_emblem_Square_Transparent_WEB.png');
+        aspect-ratio: 17/9;
+        width: 20svw;
+      }
+
+      #google-for-devs-logo {
+        background-image: url('./icons/googlefordevelopers_logo.png');
+        aspect-ratio: 10/1;
+        width: 40svw;
+      }
+    }
+
+    #about-us-footer {
+      max-width: 100%;
+      background-color: $color-main-1;
+      margin-bottom: 0;
+      margin-top: 48px;
+      padding: 20px 8svw;
+      border-radius: $about-us-box-curve;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      display: flex;
+
+      #logo-w-text {
+        width: 20svw;
+        font-weight: 500;
+
+        img {
+          $pic-size: 60px;
+
+          width: $pic-size;
+          height: $pic-size;
+          border-radius: $pic-size/2;
+          margin: 0;
+          margin-bottom: 16px;
+        }
+
+        p {
+          text-align: left;
+          padding: 0;
+          font-size: 16px;
+          color: $color-main-2;
+          margin: 0;
+        }
+      }
+
+      #other-links {
+        display: flex;
+
+        .link-box {
+          display: flex;
+          flex-direction: column;
+          margin: 0 16px;
+
+          a {
+            @extend %anchorReset;
+
+            margin: 12px 0;
+            color: $color-main-2;
+          }
+
+          &:nth-child(1) {
+            font-weight: 600;
+          }
+        }
+      }
+
+      #contact-info-box {
+        pre {
+          color: $color-main-2;
+          text-align: right;
+          font-family: $font-main;
+          font-size: 1.3125em;
+        }
+
+        #contact-links {
+          display: flex;
+          justify-content: right;
+
+          a {
+            @extend %anchorReset;
+
+            $icon-size: 2.5svw;
+
+            color: $color-main-2;
+            display: block;
+            width: $icon-size;
+            font-size: 0.1px;
+            padding: $icon-size / 2 0;
+            margin: 0;
+            margin-left: 8px;
+
+            background-color: $color-main-2;
+            mask-repeat: no-repeat;
+
+            $masks-list: 'instagram.svg', 'facebook.svg', 'linkedin.svg',
+              'x-twitter.svg', 'youtube.svg';
+
+            @for $i from 1 through 5 {
+              &:nth-child(#{$i}) {
+                mask-image: url('./icons/' + list.nth($masks-list, $i));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  #homepage-main {
+    height: calc(100% - 108px);
+
+    h2 {
+      font-size: 5rem;
+    }
+
+    p {
+      padding: 0 10%;
+    }
+
+    #info-cards-box {
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      width: 80%;
+      min-height: 800px;
+      font-size: 1rem;
+
+      .info-card,
+      #fast-signup-card {
+        min-height: 300px;
+        height: 35svh;
+        width: 40%;
+        margin-bottom: 1rem;
+      }
+
+      .info-card {
+        i {
+          margin: 0 auto;
+          margin-bottom: 0;
+          margin-top: 1.5rem;
+          scale: 3;
+        }
+
+        .number {
+          $fs: 5rem;
+
+          display: block;
+          font-size: $fs;
+          height: $fs;
+          margin: 0 auto;
+        }
+
+        .text {
+          font-size: 1.25rem;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .see-details-button {
+          margin: 0 auto;
+        }
+      }
+
+      #fast-signup-card {
+        h3 {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #about-us {
+      p,
+      h2,
+      h3 {
+        padding: 0px 30px;
+        margin: 0 auto;
+      }
+
+      h2,
+      h3 {
+        height: 1em;
+        line-height: 1em;
+        margin: 1rem auto;
+      }
+
+      #logo-pic {
+        margin: 10px auto 0 auto;
+      }
+
+      #contributed-sdgs-box {
+        #sdg-card-box {
+          a {
+            $size: 11.5svw;
+
+            width: $size;
+            height: $size;
+          }
+        }
+      }
+
+      #about-us-footer {
+        font-size: 0.875rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #homepage-main {
+    width: 100vw;
+
+    h2 {
+      $fs: 4rem;
+      line-height: $fs;
+      font-size: $fs;
+      padding: 0;
+      width: 10rem;
+      height: fit-content;
+      margin: 6rem auto 0.1em auto;
+    }
+
+    #info-cards-box {
+      min-height: 1400px;
+      .info-card,
+      #fast-signup-card {
+        $h: 300px;
+        min-height: $h;
+        height: $h;
+        width: 80%;
+        min-width: 240px;
+      }
+    }
+
+    #about-us {
+      h2 {
+        margin-top: 2rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      #contributed-sdgs-box {
+        h3 {
+          margin: 10svw auto;
+          font-size: 2rem;
+          height: 2rem;
+          text-align: center;
+        }
+
+        #sdg-card-box {
+          width: 90svw;
+          overflow-x: scroll;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 2rem auto;
+          padding: 0 1rem;
+
+          a {
+            $size: 8rem;
+
+            width: $size;
+            height: $size;
+          }
+        }
+      }
+
+      #contributed-others-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+          margin: 2rem auto;
+        }
+
+        $logo-size: 200px;
+
+        #sdg-logo {
+          width: $logo-size;
+        }
+
+        #google-for-devs-logo {
+          width: calc($logo-size * 2);
+        }
+      }
+
+      #about-us-footer {
+        flex-direction: column;
+
+        #logo-w-text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60svw;
+
+          img {
+            margin: 0 auto;
+          }
+
+          p {
+            padding: 0 1rem;
+          }
+        }
+
+        #other-links {
+          font-size: 1rem;
+        }
+
+        #contact-info-box {
+          pre {
+            text-align: center;
+          }
+
+          #contact-links {
+            justify-content: center;
+
+            a {
+              $size: 2.5rem;
+
+              mask-size: $size;
+              width: $size;
+              height: calc($size + 0.2rem);
+              padding: 0;
+
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #homepage-main {
+    $nav-h: 5rem;
+
+    top: $nav-h;
+    height: calc(100% - $nav-h);
+
+    h2 {
+      margin-top: 1rem;
+    }
+
+    #about-us {
+      $about-us-box-curve: 1.5rem;
+
+      border-radius: $about-us-box-curve $about-us-box-curve 0 0;
+
+      h2 {
+        font-size: 4rem;
+      }
+
+      h3:nth-child(7) {
+        $fs: 2.2rem;
+
+        font-size: $fs;
+        height: calc(2 * $fs);
+        text-align: center;
+      }
+
+      #contributed-sdgs-box {
+        h3 {
+          $fs: 2rem;
+
+          font-size: $fs;
+          height: calc(2.5 * $fs);
+        }
+
+        #sdg-card-box {
+          .sdg-card {
+            $size: 12rem;
+            width: $size;
+            height: $size;
+          }
+        }
+      }
+
+      #contributed-others-box {
+        width: 100svw;
+
+        $logo-size: 200px;
+
+        #sdg-logo {
+          width: $logo-size;
+        }
+
+        #google-for-devs-logo {
+          width: calc($logo-size * 2);
+        }
+      }
+
+      #about-us-footer {
+        border-radius: $about-us-box-curve $about-us-box-curve 0 0;
+
+        #logo-w-text {
+          p {
+            font-size: 0.9rem;
+            min-width: 100%;
+          }
+        }
+
+        #contact-info-box {
+          pre {
+            font-size: 0.875rem;
+          }
+
+          #contact-links {
+            a {
+              mask-size: 2rem;
+              mask-position: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

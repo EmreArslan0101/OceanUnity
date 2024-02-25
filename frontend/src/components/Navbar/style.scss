@@ -1,0 +1,457 @@
+@import '../../commons.scss';
+
+nav {
+    
+    $nav-h: 5.75rem;
+
+    position: static;
+    height: $nav-h;
+    width: 100svw;
+
+
+    #real-nav {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: $color-main-1;
+        font-family: $font-main;
+        position: relative;
+        z-index: 3;
+
+        #nav-upper{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 3.5rem;
+            width: 100%;
+        }
+
+        #menu-button {
+
+            margin-left: 3rem;
+            margin-right: 1rem;
+    
+            $size: 2rem;
+    
+            width: $size;
+            height: $size;
+    
+            @include onHoverGetsBiggerEffect(1.1);
+    
+            mask-image: url("./menu.svg");
+            background-color: $color-main-2;
+            mask-repeat: no-repeat;
+            mask-size: cover;
+    
+        }
+    
+        #sitename-box{
+    
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 12px;
+    
+            img{
+                height: 40px;
+            }
+            
+            h1{
+    
+                font-family: $font-main;
+                font-weight: 700;
+                font-style: normal;
+                margin-left: 12px;
+                color: $color-main-2;
+                transition: .3s;
+    
+                &:hover {
+                    color: $color-main-3;
+                }
+    
+                a {
+    
+                    @extend %anchorReset;
+    
+                }
+    
+            }
+    
+        }
+    
+        #navigator{
+    
+            margin:auto;
+            display: flex;
+            align-items: center;
+            height: 2.25rem;
+    
+            .navigator-section {
+    
+                @extend %anchorReset;
+    
+                transition: .3s;
+    
+                &:hover {
+                    color: $color-main-4;
+                }
+    
+                color: $color-main-2;
+                padding: 16px;
+                height: min-content;
+            }
+        }
+    
+        #accountOptions {
+    
+            display: flex;
+            padding: 10px;
+            margin-right: 16px;
+            border-radius: calc(20px + 1em);
+            transition: .3s;
+            color:$color-main-2;
+            z-index: 2;
+            
+            #account {
+    
+                display: flex;
+                align-items: center;
+    
+                @extend %anchorReset;
+        
+                #accountPic {
+
+                    margin-right: .3125rem;
+
+                    $size: 2.5rem;
+                    width: $size;
+                    height: $size;
+                }
+        
+                #sliderActivator {
+    
+                    $size: 2rem;
+                    width: $size;
+                    height: $size;
+                    color: #0000;
+                    font-size: .1px;
+                    mask-image: url("./expand_more.svg");
+                    mask-size: contain;
+                    background-color: $color-main-2;
+
+    
+                    @include onHoverGetsBiggerEffect(1.5);
+
+    
+                }
+            }
+    
+        }
+        
+    }
+
+    #menu-slider{
+
+        $msw : 400px;
+
+        height: calc(100vh - $nav-h);
+        overflow-y: scroll;
+        width: $msw;
+        background-color: $color-main-1;
+        position: absolute;
+        display: grid;
+        left: -$msw;
+        top: $nav-h;
+        transition: ease .3s;
+        z-index: 2;
+
+        &:target {
+            left: 0px;
+        }
+
+        .menu-slider-divison {
+
+            display: grid;
+            height: fit-content;
+            margin: 100px 0;
+
+            .menu-slider-link {
+
+                @extend %anchorReset;
+
+                color: $color-main-2;
+                height: 40px;
+                font-weight: 700;
+                font-size: xx-large;
+                margin-bottom: 16px;
+                margin-left: 80px;
+                transition: .3s;
+
+                &:hover {
+                    scale: 1.2;
+                    margin-left: 100px;
+                }
+                
+            }
+        }
+        
+    }
+
+    #account-slider {
+
+        background-color: $color-main-2;
+        display: grid;
+        width: 200px;
+        position: absolute;
+        top: calc( -1 * ($nav-h + 56px) /* Alt - Üst paddingleri de ekledim*/);
+        right: 20px;
+        padding: 28px 16px;
+        transition: ease .3s;
+        z-index: 2;
+
+        &:target {
+            top: $nav-h;
+        }
+
+
+        .account-slider-opts {
+
+            @extend %anchorReset;
+
+            font-size: 28px;
+            font-weight: 700;
+            color: $color-main-1;
+            margin-bottom: 16px;
+            margin-left: 10px;
+
+            @include onHoverGetsBiggerEffect(1.1);
+
+            &:hover {
+                margin-right: 35px;
+            }
+
+
+        }
+    }
+    
+}
+
+@media (max-width: 900px) {
+
+    nav {
+
+        $nav-h-900px: 8rem;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: .55rem;
+        height: $nav-h-900px;
+
+        #real-nav {
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            #nav-upper {
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100svw;
+                height: 4rem;
+                z-index: 3;
+    
+                #menu-button {
+    
+                    $size: 2rem;
+    
+                    width: $size;
+                    height: $size;
+    
+                    margin: 0;
+                    margin-left: 5svw;
+    
+                    &::after {
+                        content: none;
+                    }
+        
+                }
+                
+                #sitename-box {
+    
+                    font-size: 2em;
+    
+                    img {
+    
+                        $size: 2.5em;
+    
+                        width: $size;
+                        height: $size;
+                    }
+                }
+    
+            }
+    
+            #navigator {
+    
+                width: 100%;
+                justify-content: center;
+                background-color: $color-main-1;
+                height: 4rem;
+                z-index: 2;
+    
+                .navigator-section {
+                    font-size: 2em;
+                    padding: 1.1rem 0;
+                    margin: 0 auto;
+                }
+    
+            }
+
+        }
+
+        #account-slider {
+
+
+            width: 10rem;
+            padding: .5rem 1rem;
+            right: 0;
+            top: -2rem;
+            font-size: 1rem;
+
+            .account-slider-opts {
+                font-size: 1.2rem;
+            }
+
+
+            &:target {
+                top: calc($nav-h-900px);
+            }
+
+        }
+
+    }
+    
+}
+
+@media (max-width: 500px) {
+
+    nav {
+
+        $nav-h: 5rem;
+    
+        max-height: $nav-h;
+
+        #real-nav {
+
+            #nav-upper {
+
+                height: 3rem;
+                margin-top: .2rem;
+
+                $far-margin-x: 3svw;
+
+                #menu-button {
+
+                    $size: 1.5rem;
+                    width: $size;
+                    height: $size;
+                    margin-left: $far-margin-x;
+                }
+
+                #sitename-box {
+                    font-size: .75rem;
+                }
+
+                #accountOptions {
+
+                    margin: 0;
+                    padding: 10px 0;
+
+                    #account {
+
+                        margin-right: $far-margin-x;
+                        
+                        #accountPic {
+                            
+                            $size: 2.1rem;
+                            width: $size;
+                            height: $size;
+
+                        }
+
+                        #sliderActivator {
+                            
+                            $size: 1.2rem;
+                            width: $size;
+                            height: $size;
+
+                        }
+
+                    }
+                }
+    
+            }
+
+            #navigator {
+                
+                overflow-x: scroll;
+
+                $h: 2rem;
+                height: $h;
+                
+                .navigator-section {
+                    padding: 0;
+                    font-size: calc($h / 3);
+                }
+
+            }
+        }
+
+        #menu-slider {
+
+            height: calc(100% - $nav-h);
+            width: 100svw;
+            top: $nav-h;
+            left: -100svw;
+
+            .menu-slider-divison {
+                .menu-slider-link {
+                    text-align: center;
+                    margin: 1rem auto;
+                    font-size: 1.8rem;
+
+                    &:hover {
+                        margin: 1rem auto;
+                    }
+                }
+            }
+
+        }
+
+        #account-slider {
+
+            top: -$nav-h;
+            right: 0;
+            padding: .9375rem .5rem;
+            width: 9rem;
+
+            &:target {
+                top: $nav-h;
+            }
+
+            .account-slider-opts {
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+    

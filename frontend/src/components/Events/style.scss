@@ -1,0 +1,153 @@
+@import "../../commons.scss";
+
+#events {
+
+    height: calc(100svh - 5.75rem);
+    overflow-y: scroll;
+    background-image: url("../Homepage/OceanUnity\ Website\ Photo.PNG");
+    background-position: center;
+    background-size: cover;
+
+    #page-header {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 4rem;
+        color: $color-main-2;
+
+        @include textBorder;
+    
+
+        h3{
+
+            width: fit-content;
+            $fs: 3rem;
+    
+            line-height: calc((3 * $fs) / 4);
+            font-size: $fs;
+            padding: calc($fs / 2) 0;
+            text-align: center;
+    
+        }
+
+        #event-amount-chooser {
+
+            span {
+                margin-right: .2rem;
+            }
+
+            #event-amount-input {
+                color: #000;
+                background-color: #fff;
+                border-radius: .3rem;
+                padding: .1rem;
+            }
+
+        }
+
+    }
+
+    #events-box {
+
+        #events-nav {
+
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            width: fit-content;
+            height: 3rem;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+            padding: .5rem;
+            border-radius: 1.5rem;
+            
+            background-color: transparentize($color-main-2,.4);
+
+            &:hover {
+                background-color: transparentize($color-main-2,.2);
+            }
+
+            &:active {
+                background-color: $color-main-2;
+            }
+            
+            i {
+
+                $size: 2rem;
+                width: $size;
+                height: $size;
+                border-radius: calc($size / 2);
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &:hover {
+                    background-color: transparentize($color-main-2,.2);
+                }
+
+                &:active {
+                    background-color: $color-main-2;
+                }
+
+            }
+
+            #before {
+                background-image: url("../Blog/BlogMain/icons/chevron_left_FILL0_wght400_GRAD0_opsz24.svg");
+            }
+
+            #after {
+                background-image: url("../Blog/BlogMain/icons/chevron_right_FILL0_wght400_GRAD0_opsz24.svg");
+            }
+
+            span {
+                margin: 0 1rem;
+            }
+        
+        }
+
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    #events {
+
+        height: calc(100svh - 8rem);
+        padding-bottom: 1rem;
+
+        #page-header {
+
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            #events-nav {
+                scale: .8;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    #events {
+
+        height: calc(100svh - 5rem);
+        padding-bottom: 1rem;
+
+        #page-header{
+            
+            width: 90%;
+            margin: 0 auto;
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+}

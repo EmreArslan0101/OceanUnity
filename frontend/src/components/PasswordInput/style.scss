@@ -1,0 +1,49 @@
+@import "../../commons.scss";
+
+.password-input{
+
+    display: flex;
+    background-color: white;
+    transition: .3s;
+    margin-top: 4px;
+    max-height: 100%;
+
+    &:has(input:focus){
+        box-shadow: 0 0 0px 4px $color-main-5;
+    }
+
+    i{
+        display: block;
+        width: 2.5rem;
+        height: 100%;
+        color: $color-main-5;
+        background-color: $color-main-5;
+        mask-position: center;
+        mask-size: 1.2rem;
+        mask-repeat: no-repeat;
+    }
+
+    input{
+        margin-top: 0 !important;
+        box-shadow: none !important;
+        padding-right: 0 !important;
+    }
+
+    .visibility-on {
+        mask-image: url("./visibilityOn.svg");
+    }
+
+    .visibility-off {
+        mask-image: url("./visibilityOff.svg");
+    }
+
+}
+
+@media (max-width: 350px) {
+
+    .password-input i{
+        top: .4em;
+        left: -1vw;
+    }
+
+}
